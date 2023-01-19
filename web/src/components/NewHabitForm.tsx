@@ -11,7 +11,11 @@ export function NewHabitForm() {
         placeholder="ex.: Exercicios, dormir bem, etc..."
         className="p-4 rounded-lg mt-3  bg-zinc-800 text-white placeholder:text-zinc-400"
         autoFocus
+<<<<<<< HEAD
       /> 
+=======
+      />
+>>>>>>> 5c6185ebb5be5b6665c69d34531513e6f12cfef8
       <label className="font-semibold leading-tight mt-4">
         Qual a recorrencia?
       </label>
