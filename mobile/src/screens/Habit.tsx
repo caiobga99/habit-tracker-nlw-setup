@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import { View, ScrollView, Text, Alert } from "react-native";
 import { useRoute } from "@react-navigation/native";
+import { Alert, ScrollView, Text, View } from "react-native";
 import dayjs from "dayjs";
+import clsx from "clsx";
+
+import { api } from "../lib/axios";
+import { generateProgressPercentage } from "../utils/generate-progress-percentage";
 
 import { BackButton } from "../components/BackButton";
 import { ProgressBar } from "../components/ProgressBar";
 import { Checkbox } from "../components/Checkbox";
 import Loading from "../components/Loading";
-import { api } from "../lib/axios";
-
+// import { HabitsEmpty } from "../components/HabitsEmpty";
 interface Params {
   date: string;
 }
@@ -23,11 +26,20 @@ export function Habit() {
   const [loading, setLoading] = useState(true);
   const [dayInfo, setDayInfo] = useState<dayInfoProps | null>(null);
   const [completedHabits, setCompletedHabits] = useState<string[]>([]);
+
   const route = useRoute();
+
   const { date } = route.params as Params;
   const parsedDate = dayjs(date);
   const dayOfWeek = parsedDate.format("dddd");
   const dayAndMonth = parsedDate.format("DD/MM");
+
+  const habitsProgress = dayInfo?.possibleHabits?.length
+    ? generateProgressPercentage(
+        dayInfo.possibleHabits.length,
+        completedHabits.length
+      )
+    : 0;
 
   const fetchHabits = async () => {
     try {
@@ -44,6 +56,16 @@ export function Habit() {
       );
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleToggleHabits = async (habitId: string) => {
+    if (completedHabits?.includes(habitId)) {
+      setCompletedHabits((prevState) =>
+        prevState.filter((habit) => habit !== habitId)
+      );
+    } else {
+      setCompletedHabits((prevState) => [...prevState, habitId]);
     }
   };
 
@@ -67,7 +89,7 @@ export function Habit() {
         <Text className="text-white font-extrabold text-3xl">
           {dayAndMonth}
         </Text>
-        <ProgressBar progress={30} />
+        <ProgressBar progress={habitsProgress} />
 
         <View className="mt-6">
           {dayInfo?.possibleHabits &&
@@ -76,6 +98,7 @@ export function Habit() {
                 key={habit.id}
                 title={habit.title}
                 checked={completedHabits.includes(habit.id)}
+                onPress={() => handleToggleHabits(habit.id)}
               />
             ))}
         </View>
