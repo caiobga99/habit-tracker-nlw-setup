@@ -42,7 +42,7 @@ export function New() {
         Alert.alert(
           "Novo Habito",
           "Informe o nome do hábito, e escolha a periodicidade!"
-        );
+        ); 
       }
       await api.post("/habits", { title, weekDays });
       setTitle("");
