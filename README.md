@@ -1,4 +1,4 @@
-# task-application-nlw
+# habit-tracker-nlw-setup
 Application developed during NLW Setup - Ignite
 Habit tracker
 #technologies
