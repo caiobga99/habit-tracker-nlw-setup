@@ -11,13 +11,8 @@ npx expo start
 
 Application developed during NLW Setup - Ignite
 Habit tracker
-#technologies
--NodeJS
--Typescript
--Fastify
--Prisma
--ViteJS
--ReactJS
--TailwindCSS
--React Native
--Expo
+
+#Technologies Used
+Front-End: React/Typescript, TailwindCSS, Vite, Axios
+Back-End: Typescript, Fastify, Prisma, Sqlite
+Mobile: React-Native/Typescript, TailwindCSS, Expo, Axios
