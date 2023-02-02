@@ -13,6 +13,6 @@ Application developed during NLW Setup - Ignite
 Habit tracker
 
 #Technologies Used
-Front-End: React/Typescript, TailwindCSS, Vite, Axios
-Back-End: Typescript, Fastify, Prisma, Sqlite
+Web: React/Typescript, TailwindCSS, Vite, Axios
+Server: Typescript, Fastify, Prisma, Sqlite
 Mobile: React-Native/Typescript, TailwindCSS, Expo, Axios
