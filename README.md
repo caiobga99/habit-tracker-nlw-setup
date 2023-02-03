@@ -1,18 +1,49 @@
 # habit-tracker-nlw-setup
 
-Run Project
-#Web and Server
+Habit Tracker is a Application developed during NLW Setup - Ignite
+
+## Installation
+
+### Web and Server
+Use the package manager [npm](https://docs.npmjs.com/cli/v6/commands/npm-install) to install dependencies.
+
+```bash
 npm install
+```
+Use the package manager [npm](https://docs.npmjs.com/cli/v6/commands/npm-install) to start a application.
+
+```bash
 npm run dev
+```
 
-#Mobile
+### Mobile
+Use the package manager [npm](https://docs.npmjs.com/cli/v6/commands/npm-install) to install dependencies.
+
+```bash
 npm install
+```
+Use the package manager [npx](https://docs.expo.dev/workflow/expo-cli/) to start a application.
+
+```bash
 npx expo start
+```
+## Technologies Used
 
-Application developed during NLW Setup - Ignite
-Habit tracker
-
-#Technologies Used
-Web: React/Typescript, TailwindCSS, Vite, Axios
-Server: Typescript, Fastify, Prisma, Sqlite
-Mobile: React-Native/Typescript, TailwindCSS, Expo, Axios
+### Web
+- [React] 
+- [TypeScript] 
+- [TailwindCSS]
+- [Vite]
+- [Axios]
+### Server
+- [node.js]
+- [Typescript]
+- [Prisma]
+- [Fastify]
+- [Sqlite]
+### Mobile
+- [React-Native]
+- [Typescript]
+- [Expo]
+- [TailwindCSS]
+- [Axios]
